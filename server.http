@@ -1,0 +1,40 @@
+@HostAddress = http://localhost:3000
+
+GET {{HostAddress}}/tasks
+
+###
+
+POST  {{HostAddress}}/tasks
+Content-Type: : application/json
+
+{
+  "title": "Task Teste",
+  "description": "Task Teste Description"
+}
+
+###
+
+PUT  {{HostAddress}}/tasks/008fb95f-550c-44dc-af92-99e863f51e19
+Content-Type: : application/json
+
+{
+  "title": "Task Alterada",
+  "description": "Task Description Alterada"
+}
+
+###
+
+DELETE {{HostAddress}}/tasks/008fb95f-550c-44dc-af92-99e863f51e19
+
+###
+
+PATCH {{HostAddress}}/tasks/8165eb0e-7cd5-4029-83b7-addcd9b44ec1/complete
+
+###
+
+POST {{HostAddress}}/tasks/upload
+Content-Type: text/csv
+
+<@ ./tasks.csv
+
+###
